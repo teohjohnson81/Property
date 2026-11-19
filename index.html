@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Real Estate Investment | Strategic Property & Land Advisory</title>
+  <meta name="description" content="Institutional-grade real estate investment, land acquisition, and commercial portfolio advisory." />
+
+  <!-- Schema.org Structured Data (Organization & RealEstateAgent - No Review Schema) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "RealEstateAgent",
+    "name": "Real Estate Investment",
+    "description": "Strategic property investment, commercial real estate, and high-yield asset advisory.",
+    "sameAs": [
+      "https://www.facebook.com/"
+    ],
+    "areaServed": "Malaysia & Regional Markets"
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #0b0f17;
+      --surface: #131a26;
+      --surface-elevated: #1a2333;
+      --border: #263248;
+      --text-primary: #f8fafc;
+      --text-secondary: #94a3b8;
+      --accent: #d4af37;
+      --accent-hover: #e5c158;
+      --whatsapp: #25d366;
+      --facebook: #1877f2;
+      --radius: 14px;
+      --tap-min: 48px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button, input, select, textarea {
+      font-family: inherit;
+    }
+
+    /* Prevent iOS Safari auto-zoom on form focus */
+    input, select, textarea {
+      font-size: 16px !important;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Sticky Header & Mobile Drawer */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(11, 15, 23, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 68px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 1.125rem;
+      letter-spacing: -0.02em;
+      min-height: var(--tap-min);
+    }
+
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, var(--accent), #9e7b18);
+      color: #0b0f17;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      font-size: 0.95rem;
+    }
+
+    .desktop-nav {
+      display: none;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .desktop-nav a {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      min-height: var(--tap-min);
+      display: inline-flex;
+      align-items: center;
+      transition: color 0.2s ease;
+    }
+
+    .desktop-nav a:hover {
+      color: var(--text-primary);
+    }
+
+    .menu-toggle {
+      min-width: var(--tap-min);
+      min-height: var(--tap-min);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      color: var(--text-primary);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .mobile-drawer {
+      display: none;
+      flex-direction: column;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 12px 20px 20px;
+      gap: 6px;
+    }
+
+    .mobile-drawer.open {
+      display: flex;
+    }
+
+    .mobile-drawer a {
+      min-height: var(--tap-min);
+      display: flex;
+      align-items: center;
+      padding: 0 12px;
+      border-radius: 10px;
+      font-weight: 500;
+      color: var(--text-primary);
+    }
+
+    .mobile-drawer a:hover,
+    .mobile-drawer a:active {
+      background: var(--surface-elevated);
+    }
+
+    /* Buttons (Minimum 48px Tap Target) */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: var(--tap-min);
+      padding: 12px 22px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: all 0.2s ease;
+      text-align: center;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #0b0f17;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-hover);
+    }
+
+    .btn-secondary {
+      background: var(--surface);
+      border-color: var(--border);
+      color: var(--text-primary);
+    }
+
+    .btn-secondary:hover {
+      background: var(--surface-elevated);
+    }
+
+    .btn-facebook {
+      background: var(--facebook);
+      color: #ffffff;
+    }
+
+    .btn-facebook:hover {
+      filter: brightness(1.08);
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 56px 0 48px;
+      border-bottom: 1px solid var(--border);
+      background: radial-gradient(circle at top right, rgba(212, 175, 55, 0.12), transparent 55%);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      margin-bottom: 14px;
+    }
+
+    .hero h1 {
+      font-size: 2rem;
+      line-height: 1.2;
+      letter-spacing: -0.025em;
+      margin-bottom: 16px;
+    }
+
+    .hero p {
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+      max-width: 620px;
+      margin-bottom: 28px;
+    }
+
+    /* Stacked Mobile CTAs */
+    .hero-ctas {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .hero-ctas .btn {
+      width: 100%;
+    }
+
+    /* Metrics Strip */
+    .metrics {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-top: 36px;
+    }
+
+    .metric-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px 20px;
+    }
+
+    .metric-value {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .metric-label {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+    }
+
+    /* Sections */
+    section {
+      padding: 56px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-header {
+      margin-bottom: 24px;
+    }
+
+    .section-header h2 {
+      font-size: 1.6rem;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+    }
+
+    .section-header p {
+      color: var(--text-secondary);
+      font-size: 0.98rem;
+    }
+
+    /* Horizontally Scrollable Sector Filter Tabs */
+    .filter-scroll {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding-bottom: 8px;
+      margin-bottom: 24px;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+
+    .filter-scroll::-webkit-scrollbar {
+      display: none;
+    }
+
+    .filter-chip {
+      flex: 0 0 auto;
+      min-height: var(--tap-min);
+      padding: 0 18px;
+      border-radius: 999px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .filter-chip.active,
+    .filter-chip:hover {
+      background: var(--accent);
+      color: #0b0f17;
+      border-color: var(--accent);
+    }
+
+    /* Single-Column Mobile Card Grids */
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .card-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      background: rgba(212, 175, 55, 0.12);
+      padding: 4px 10px;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+
+    .card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+
+    .card-meta {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+    }
+
+    .card-meta strong {
+      color: var(--text-primary);
+    }
+
+    /* Official Facebook Page Integration */
+    .fb-card {
+      background: linear-gradient(145deg, var(--surface), var(--surface-elevated));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .fb-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .fb-badge {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: var(--facebook);
+      display: grid;
+      place-items: center;
+      color: #fff;
+      flex-shrink: 0;
+    }
+
+    /* Advisory Inquiry Form */
+    .form-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .field label {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      min-height: var(--tap-min);
+      padding: 12px 14px;
+      border-radius: 10px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--text-primary);
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+
+    /* Footer */
+    footer {
+      padding: 40px 0 calc(96px + env(safe-area-inset-bottom));
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+
+    .footer-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-links a {
+      min-height: var(--tap-min);
+      display: inline-flex;
+      align-items: center;
+    }
+
+    /* Floating WhatsApp Button with Safe-Area Inset Padding */
+    .whatsapp-float {
+      position: fixed;
+      right: 18px;
+      bottom: calc(18px + env(safe-area-inset-bottom));
+      z-index: 90;
+      min-height: 52px;
+      padding: 0 18px;
+      border-radius: 999px;
+      background: var(--whatsapp);
+      color: #062812;
+      font-weight: 700;
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
+    }
+
+    /* Desktop Breakpoints */
+    @media (min-width: 768px) {
+      .menu-toggle,
+      .mobile-drawer {
+        display: none !important;
+      }
+
+      .desktop-nav {
+        display: flex;
+      }
+
+      .hero {
+        padding: 84px 0 72px;
+      }
+
+      .hero h1 {
+        font-size: 2.85rem;
+        max-width: 780px;
+      }
+
+      .hero-ctas {
+        flex-direction: row;
+      }
+
+      .hero-ctas .btn {
+        width: auto;
+      }
+
+      .metrics {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .card-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .form-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .form-grid .full {
+        grid-column: 1 / -1;
+      }
+
+      .footer-grid {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sticky Header -->
+  <header>
+    <div class="container nav-bar">
+      <a href="#top" class="brand">
+        <span class="brand-mark">RE</span>
+        <span>Real Estate Investment</span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Primary Navigation">
+        <a href="#opportunities">Opportunities</a>
+        <a href="#advisory">Advisory</a>
+        <a href="#updates">Facebook Updates</a>
+        <a href="#contact" class="btn btn-primary">Request Brief</a>
+      </nav>
+
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobileDrawer" aria-label="Toggle Menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Slide-Down Mobile Drawer -->
+    <nav class="mobile-drawer" id="mobileDrawer" aria-label="Mobile Navigation">
+      <a href="#opportunities" class="drawer-link">Investment Opportunities</a>
+      <a href="#advisory" class="drawer-link">Advisory Services</a>
+      <a href="#updates" class="drawer-link">Official Facebook Page</a>
+      <a href="#contact" class="drawer-link">Request Investment Brief</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <span class="eyebrow">Institutional & Private Capital Advisory</span>
+        <h1>High-Conviction Real Estate Acquisitions & Strategic Land Deals</h1>
+        <p>Direct access to off-market commercial assets, industrial hubs, and prime development parcels structured for resilient capital growth and predictable rental yield.</p>
+
+        <div class="hero-ctas">
+          <a href="#opportunities" class="btn btn-primary">Explore Active Mandates</a>
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+            Follow Real Estate Investment on Facebook
+          </a>
+        </div>
+
+        <div class="metrics">
+          <div class="metric-card">
+            <div class="metric-value">6.8% – 9.2%</div>
+            <div class="metric-label">Target Net Annual Yield Range</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-value">100% Vetted</div>
+            <div class="metric-label">Title, Zoning & Valuation Due Diligence</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-value">Direct Access</div>
+            <div class="metric-label">Off-Market Land & Commercial Portfolios</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Opportunities with Horizontally Scrollable Sector Filters -->
+    <section id="opportunities">
+      <div class="container">
+        <div class="section-header">
+          <h2>Active Investment Sectors</h2>
+          <p>Filter current acquisition opportunities by asset class.</p>
+        </div>
+
+        <div class="filter-scroll" role="tablist" aria-label="Investment Sectors">
+          <button class="filter-chip active" data-filter="all" role="tab" aria-selected="true">All Sectors</button>
+          <button class="filter-chip" data-filter="commercial" role="tab" aria-selected="false">Commercial & Retail</button>
+          <button class="filter-chip" data-filter="industrial" role="tab" aria-selected="false">Industrial & Logistics</button>
+          <button class="filter-chip" data-filter="land" role="tab" aria-selected="false">Development Land</button>
+          <button class="filter-chip" data-filter="hospitality" role="tab" aria-selected="false">Hospitality & Mixed-Use</button>
+        </div>
+
+        <div class="card-grid" id="opportunityGrid">
+          <article class="card" data-sector="commercial">
+            <div>
+              <span class="card-tag">Commercial</span>
+              <h3>Prime Transit-Oriented Retail Block</h3>
+              <p>Anchored tenancies with long-term corporate leases in a high-footfall urban corridor.</p>
+            </div>
+            <div>
+              <div class="card-meta">
+                <span>Est. Net Yield: <strong>7.4% p.a.</strong></span>
+                <span>Tenure: <strong>Freehold</strong></span>
+              </div>
+              <a href="#contact" class="btn btn-secondary" style="width:100%; margin-top:14px;">Request Fact Sheet</a>
+            </div>
+          </article>
+
+          <article class="card" data-sector="industrial">
+            <div>
+              <span class="card-tag">Industrial</span>
+              <h3>Grade-A Logistics & Warehousing Hub</h3>
+              <p>Modern high-eave facility with highway frontage and triple-net multinational lease covenant.</p>
+            </div>
+            <div>
+              <div class="card-meta">
+                <span>Est. Net Yield: <strong>8.1% p.a.</strong></span>
+                <span>WALE: <strong>7.5 Years</strong></span>
+              </div>
+              <a href="#contact" class="btn btn-secondary" style="width:100%; margin-top:14px;">Request Fact Sheet</a>
+            </div>
+          </article>
+
+          <article class="card" data-sector="land">
+            <div>
+              <span class="card-tag">Development Land</span>
+              <h3>Converted Commercial Zoning Parcel</h3>
+              <p>Infrastructure-ready acreage positioned along an expanding residential and transit growth belt.</p>
+            </div>
+            <div>
+              <div class="card-meta">
+                <span>Horizon: <strong>24–36 Months</strong></span>
+                <span>Status: <strong>DO Approved</strong></span>
+              </div>
+              <a href="#contact" class="btn btn-secondary" style="width:100%; margin-top:14px;">Request Fact Sheet</a>
+            </div>
+          </article>
+
+          <article class="card" data-sector="hospitality">
+            <div>
+              <span class="card-tag">Hospitality</span>
+              <h3>Boutique Serviced Suites Asset</h3>
+              <p>Turnkey hospitality building in a central business district with operator management in place.</p>
+            </div>
+            <div>
+              <div class="card-meta">
+                <span>Est. Net Yield: <strong>8.6% p.a.</strong></span>
+                <span>Occupancy: <strong>84% Avg</strong></span>
+              </div>
+              <a href="#contact" class="btn btn-secondary" style="width:100%; margin-top:14px;">Request Fact Sheet</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Advisory Services -->
+    <section id="advisory">
+      <div class="container">
+        <div class="section-header">
+          <h2>End-to-End Advisory</h2>
+          <p>Structured execution from deal sourcing through exit strategy.</p>
+        </div>
+
+        <div class="card-grid">
+          <div class="card">
+            <div>
+              <span class="card-tag">01 / Sourcing</span>
+              <h3>Off-Market Deal Origination</h3>
+              <p>Direct owner negotiations and private mandates unavailable on public listing portals.</p>
+            </div>
+          </div>
+          <div class="card">
+            <div>
+              <span class="card-tag">02 / Underwriting</span>
+              <h3>Feasibility & Cash-Flow Modeling</h3>
+              <p>Granular cap-rate stress testing, lease covenant audits, and regulatory zoning verification.</p>
+            </div>
+          </div>
+          <div class="card">
+            <div>
+              <span class="card-tag">03 / Structuring</span>
+              <h3>Joint Ventures & Capital Placement</h3>
+              <p>Aligning landowners, developers, and private investors with transparent governance.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Official Facebook Page Integration -->
+    <section id="updates">
+      <div class="container">
+        <div class="section-header">
+          <h2>Market Briefings & Announcements</h2>
+          <p>Stay connected with our latest acquisitions, zoning alerts, and market commentary on our official Facebook page.</p>
+        </div>
+
+        <div class="fb-card">
+          <div class="fb-header">
+            <div class="fb-badge" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/>
+              </svg>
+            </div>
+            <div>
+              <h3 style="font-size:1.15rem;">Real Estate Investment — Official Page</h3>
+              <p style="color:var(--text-secondary); font-size:0.9rem;">Weekly deal alerts, industrial land releases & commercial yield insights</p>
+            </div>
+          </div>
+
+          <p style="color:var(--text-secondary);">
+            Follow our official page on Facebook for real-time property releases, site walk-throughs, and regional market updates directly from our advisory desk.
+          </p>
+
+          <div>
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="btn btn-facebook">
+              Visit Official Facebook Page
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact / Investment Brief Request -->
+    <section id="contact">
+      <div class="container">
+        <div class="section-header">
+          <h2>Request Private Investment Brief</h2>
+          <p>Share your target sector and capital allocation range to receive curated deal memos.</p>
+        </div>
+
+        <div class="form-card">
+          <form id="inquiryForm" class="form-grid">
+            <div class="field">
+              <label for="fullName">Full Name</label>
+              <input type="text" id="fullName" name="fullName" placeholder="e.g. Alex Tan" required />
+            </div>
+
+            <div class="field">
+              <label for="phone">Phone / WhatsApp</label>
+              <input type="tel" id="phone" name="phone" placeholder="+60 12-345 6789" required />
+            </div>
+
+            <div class="field">
+              <label for="sector">Preferred Asset Class</label>
+              <select id="sector" name="sector">
+                <option value="Commercial & Retail">Commercial & Retail</option>
+                <option value="Industrial & Logistics">Industrial & Logistics</option>
+                <option value="Development Land">Development Land</option>
+                <option value="Hospitality & Mixed-Use">Hospitality & Mixed-Use</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="budget">Target Capital Range</label>
+              <select id="budget" name="budget">
+                <option value="RM 2M – RM 5M">RM 2M – RM 5M</option>
+                <option value="RM 5M – RM 15M">RM 5M – RM 15M</option>
+                <option value="RM 15M – RM 50M">RM 15M – RM 50M</option>
+                <option value="RM 50M+">RM 50M+</option>
+              </select>
+            </div>
+
+            <div class="field full">
+              <label for="notes">Acquisition Criteria (Optional)</label>
+              <textarea id="notes" name="notes" rows="3" placeholder="Location preferences, yield targets, or timeline..."></textarea>
+            </div>
+
+            <div class="full">
+              <button type="submit" class="btn btn-primary" style="width:100%;">Submit Mandate Inquiry</button>
+            </div>
+          </form>
+          <p id="formFeedback" style="display:none; margin-top:14px; color:var(--accent); font-weight:600;"></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <strong style="color:var(--text-primary);">Real Estate Investment</strong>
+        <p style="margin-top:4px;">Strategic Property & Land Advisory</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#opportunities">Opportunities</a>
+        <a href="#advisory">Advisory</a>
+        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Facebook</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Safe-Area Floating WhatsApp CTA -->
+  <a href="https://wa.me/60123456789?text=Hello%20Real%20Estate%20Investment%2C%20I%20would%20like%20to%20request%20your%20latest%20investment%20brief." target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Chat on WhatsApp">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.82 14.01c-.24.68-1.41 1.3-1.95 1.38-.5.08-1.13.11-1.82-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.79-4.17-4.94-4.36-.14-.19-1.18-1.57-1.18-3 0-1.43.75-2.13 1.01-2.42.27-.29.58-.36.77-.36.19 0 .39 0 .56.01.18.01.42-.07.66.5.24.58.82 2 .89 2.15.07.14.12.31.02.5-.1.19-.14.31-.29.48-.14.17-.3.38-.43.51-.14.14-.29.3-.13.58.17.29.74 1.22 1.59 1.98 1.09.97 2.01 1.27 2.3 1.41.29.14.46.12.63-.07.17-.19.72-.84.91-1.13.19-.29.38-.24.65-.14.27.1 1.69.8 1.98.94.29.14.48.22.55.34.07.12.07.69-.17 1.37z"/>
+    </svg>
+    <span>WhatsApp Desk</span>
+  </a>
+
+  <script>
+    // Mobile Navigation Drawer Toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileDrawer = document.getElementById('mobileDrawer');
+    const drawerLinks = document.querySelectorAll('.drawer-link');
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = mobileDrawer.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    drawerLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileDrawer.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // Horizontally Scrollable Sector Filter Chips
+    const filterChips = document.querySelectorAll('.filter-chip');
+    const cards = document.querySelectorAll('#opportunityGrid .card');
+
+    filterChips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        filterChips.forEach(c => {
+          c.classList.remove('active');
+          c.setAttribute('aria-selected', 'false');
+        });
+        chip.classList.add('active');
+        chip.setAttribute('aria-selected', 'true');
+
+        const selected = chip.dataset.filter;
+        cards.forEach(card => {
+          if (selected === 'all' || card.dataset.sector === selected) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Inquiry Form Submission Handler
+    const inquiryForm = document.getElementById('inquiryForm');
+    const formFeedback = document.getElementById('formFeedback');
+
+    inquiryForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('fullName').value.trim();
+      const sector = document.getElementById('sector').value;
+      formFeedback.textContent = `Thank you, ${name}. Our advisory desk will send ${sector} investment briefs to your contact shortly.`;
+      formFeedback.style.display = 'block';
+      inquiryForm.reset();
+    });
+  </script>
+</body>
+</html>
